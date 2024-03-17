@@ -1,0 +1,47 @@
+.side-bar-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #f5f5f5;
+  justify-content: space-between;
+}
+
+.side-bar-container .header {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0px 0px 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.side-bar-container .slot {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.side-bar-container .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  padding: 10px 0px 0px 0px;
+  border-top: 1px solid #ddd;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+  }
+
+  .author .name {
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .author .email {
+    font-size: 8px;
+    color: #666;
+  }
+}

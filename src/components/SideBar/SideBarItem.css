@@ -1,0 +1,16 @@
+.side-bar-item-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  /* background: seagreen; */
+}
+
+.side-bar-item-container .side-bar-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-bar-item-container .side-bar-item-title {
+  font-size: 12px;
+}
