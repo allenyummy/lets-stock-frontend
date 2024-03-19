@@ -1,8 +1,9 @@
 .side-bar-item-container {
   display: flex;
-  gap: 5px;
+  justify-content: start;
   align-items: center;
-  /* background: seagreen; */
+  gap: 5px;
+  min-height: 30px;
 }
 
 .side-bar-item-container .side-bar-item-icon {

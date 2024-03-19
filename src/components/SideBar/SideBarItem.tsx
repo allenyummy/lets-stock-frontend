@@ -1,5 +1,6 @@
 import "./SideBarItem.css";
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
+import { SideBarContext } from "./SideBar";
 
 interface SideBarItemProps {
   title: string;
@@ -9,10 +10,12 @@ interface SideBarItemProps {
 }
 
 const SideBarItem = ({ title, icon, active }: SideBarItemProps) => {
+  const { expanded } = useContext(SideBarContext);
+
   return (
     <div className="side-bar-item-container">
       <div className="side-bar-item-icon">{icon}</div>
-      <div className="side-bar-item-title">{title}</div>
+      {expanded && <div className="side-bar-item-title">{title}</div>}
     </div>
   );
 };
