@@ -1,33 +1,32 @@
 .side-bar-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  background: #f5f5f5;
   justify-content: space-between;
+  background: #f5f5f5;
+  padding: 10px;
+  min-height: 100vh;
 }
 
 .side-bar-container .header {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  padding: 0px 0px 10px 0;
+  align-items: center;
   border-bottom: 1px solid #ddd;
+  padding: 0px 0px 10px 0;
   min-height: 50px;
-
   .title {
-    font-size: 15px;
     font-weight: bold;
+    font-size: 15px;
   }
 
   .icon {
-    border: none;
-    background: none;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: none;
+    background: none;
 
     &:hover {
       border-radius: 4px;
@@ -48,10 +47,10 @@
   justify-content: start;
   align-items: center;
   gap: 3px;
-  min-height: 50px;
+  border-top: 1px solid #ddd;
 
   padding: 10px 0px 0px 0px;
-  border-top: 1px solid #ddd;
+  min-height: 50px;
 
   .icon {
     display: flex;
@@ -59,12 +58,12 @@
   }
 
   .author .name {
-    font-size: 10px;
     font-weight: bold;
+    font-size: 10px;
   }
 
   .author .email {
-    font-size: 8px;
     color: #666;
+    font-size: 8px;
   }
 }

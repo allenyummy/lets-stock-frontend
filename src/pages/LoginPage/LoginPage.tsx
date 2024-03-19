@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import LoginForm from "../../components/LoginForm/LoginForm";
-import "./LoginPage.css";
+import { useNavigate } from 'react-router-dom';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import './LoginPage.css';
 
 const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    navigate("/home");
+    navigate('/home');
   };
 
   return (

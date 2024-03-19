@@ -1,14 +1,13 @@
 .home-page-container {
+  display: grid;
+  grid-template-rows: 1fr 0.1fr;
+  grid-template-columns: min-content 1fr;
+  grid-template-areas:
+    'sidebar main'
+    'sidebar footer';
+  transition: grid-template-columns 0.15s ease-in-out;
   width: 100vw;
   height: 100vh;
-
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: 1fr 0.1fr;
-  grid-template-areas:
-    "sidebar main"
-    "sidebar footer";
-  transition: grid-template-columns 0.15s ease-in-out;
 }
 
 .home-page-container.side-bar-expanded {

@@ -1,10 +1,10 @@
-import "./SideBar.css";
-import { ReactNode } from "react";
-import { FaBlackTie } from "react-icons/fa";
+import './SideBar.css';
+import { ReactNode } from 'react';
+import { FaBlackTie } from 'react-icons/fa';
 import {
   MdOutlineKeyboardDoubleArrowLeft,
   MdOutlineKeyboardDoubleArrowRight,
-} from "react-icons/md";
+} from 'react-icons/md';
 
 interface SideBarProps {
   expanded: boolean;

@@ -1,5 +1,5 @@
-import "./SideBarItem.css";
-import { ReactNode } from "react";
+import './SideBarItem.css';
+import { ReactNode } from 'react';
 
 interface SideBarItemProps {
   title: string;
@@ -18,7 +18,7 @@ const SideBarItem = ({
 }: SideBarItemProps) => {
   return (
     <div
-      className={`side-bar-item-container ${active ? "active" : ""}`}
+      className={`side-bar-item-container ${active ? 'active' : ''}`}
       onClick={() => onClick(title)}
     >
       <div className="side-bar-item-icon">{icon}</div>

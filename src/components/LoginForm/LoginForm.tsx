@@ -1,5 +1,5 @@
-import "./LoginForm.css";
-import { FaUser, FaLock } from "react-icons/fa";
+import './LoginForm.css';
+import { FaUser, FaLock } from 'react-icons/fa';
 
 interface Props {
   onClickLogin: () => void;

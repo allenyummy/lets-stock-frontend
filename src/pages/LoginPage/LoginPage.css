@@ -1,9 +1,9 @@
 .login-page-container {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../../assets/login.png") no-repeat;
-  background-size: cover;
+  background: url('../../assets/login.png') no-repeat;
   background-position: center;
+  background-size: cover;
+  min-height: 100vh;
 }
