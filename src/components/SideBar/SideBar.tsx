@@ -30,7 +30,7 @@ const SideBar = ({ expanded, onClickExpandButton, children }: SideBarProps) => {
 
       <div className="footer">
         <div className="icon">
-          <FaBlackTie size={23} />
+          <FaBlackTie size={20} />
         </div>
         {expanded && (
           <div className="author">
