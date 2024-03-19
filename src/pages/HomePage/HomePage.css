@@ -3,11 +3,16 @@
   height: 100vh;
 
   display: grid;
-  grid-template-columns: minmax(min-content, 150px) 1fr;
+  grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr 0.1fr;
   grid-template-areas:
     "sidebar main"
     "sidebar footer";
+  transition: grid-template-columns 0.15s ease-in-out;
+}
+
+.home-page-container.side-bar-expanded {
+  grid-template-columns: 150px 1fr;
 }
 
 .home-page-container .side-bar-grid {

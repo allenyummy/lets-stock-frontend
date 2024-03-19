@@ -4,15 +4,25 @@ import { ReactNode } from "react";
 interface SideBarItemProps {
   title: string;
   icon: ReactNode;
-  active?: boolean;
-  onClick?: () => void;
+  expanded: boolean;
+  active: boolean;
+  onClick: (value: string) => void;
 }
 
-const SideBarItem = ({ title, icon, active }: SideBarItemProps) => {
+const SideBarItem = ({
+  title,
+  icon,
+  expanded,
+  active,
+  onClick,
+}: SideBarItemProps) => {
   return (
-    <div className="side-bar-item-container">
+    <div
+      className={`side-bar-item-container ${active ? "active" : ""}`}
+      onClick={() => onClick(title)}
+    >
       <div className="side-bar-item-icon">{icon}</div>
-      <div className="side-bar-item-title">{title}</div>
+      {expanded && <div className="side-bar-item-title">{title}</div>}
     </div>
   );
 };
