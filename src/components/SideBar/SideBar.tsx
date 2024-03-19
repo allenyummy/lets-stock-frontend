@@ -1,5 +1,5 @@
 import "./SideBar.css";
-import { ReactNode, useState, createContext } from "react";
+import { ReactNode } from "react";
 import { FaBlackTie } from "react-icons/fa";
 import {
   MdOutlineKeyboardDoubleArrowLeft,
@@ -7,37 +7,26 @@ import {
 } from "react-icons/md";
 
 interface SideBarProps {
+  expanded: boolean;
+  onClickExpandButton: (value: boolean) => void;
   children: ReactNode;
 }
 
-const defaultExpanded = false;
-export const SideBarContext = createContext({
-  expanded: defaultExpanded,
-});
-
-const SideBar = ({ children }: SideBarProps) => {
-  const [expanded, setExpanded] = useState(defaultExpanded);
-
-  const onClickExpandButton = (value: boolean) => {
-    setExpanded(value);
-  };
-
-  const ExpandButton = expanded
-    ? MdOutlineKeyboardDoubleArrowLeft
-    : MdOutlineKeyboardDoubleArrowRight;
-
+const SideBar = ({ expanded, onClickExpandButton, children }: SideBarProps) => {
   return (
     <div className="side-bar-container" aria-expanded={expanded}>
       <div className="header">
         {expanded && <div className="title">Let's Stock !</div>}
         <button className="icon" onClick={() => onClickExpandButton(!expanded)}>
-          <ExpandButton size={20} />
+          {expanded ? (
+            <MdOutlineKeyboardDoubleArrowLeft size={20} />
+          ) : (
+            <MdOutlineKeyboardDoubleArrowRight size={20} />
+          )}
         </button>
       </div>
 
-      <SideBarContext.Provider value={{ expanded }}>
-        <div className="slot">{children}</div>
-      </SideBarContext.Provider>
+      <div className="slot">{children}</div>
 
       <div className="footer">
         <div className="icon">

@@ -10,17 +10,44 @@ import {
 import "./HomePage.css";
 import SideBar from "../../components/SideBar/SideBar";
 import SideBarItem from "../../components/SideBar/SideBarItem";
+import { useState } from "react";
+
+const defaultExpanded = true;
 
 export default function Home() {
+  const [expanded, setExpanded] = useState(defaultExpanded);
+
   return (
-    <div className="home-page-container">
+    <div
+      className={`home-page-container ${expanded ? `side-bar-expanded` : ""}`}
+    >
       <div className="side-bar-grid">
-        <SideBar>
-          <SideBarItem title="DashBoard" icon={<MdOutlineSpaceDashboard />} />
-          <SideBarItem title="Profile" icon={<CgProfile />} />
-          <SideBarItem title="Settings" icon={<IoSettingsOutline />} />
-          <SideBarItem title="Help Center" icon={<MdOutlineHelpCenter />} />
-          <SideBarItem title="Contact Me" icon={<MdOutlineMailOutline />} />
+        <SideBar expanded={expanded} onClickExpandButton={setExpanded}>
+          <SideBarItem
+            title="DashBoard"
+            icon={<MdOutlineSpaceDashboard />}
+            expanded={expanded}
+          />
+          <SideBarItem
+            title="Profile"
+            icon={<CgProfile />}
+            expanded={expanded}
+          />
+          <SideBarItem
+            title="Settings"
+            icon={<IoSettingsOutline />}
+            expanded={expanded}
+          />
+          <SideBarItem
+            title="Help Center"
+            icon={<MdOutlineHelpCenter />}
+            expanded={expanded}
+          />
+          <SideBarItem
+            title="Contact Me"
+            icon={<MdOutlineMailOutline />}
+            expanded={expanded}
+          />
         </SideBar>
       </div>
 
