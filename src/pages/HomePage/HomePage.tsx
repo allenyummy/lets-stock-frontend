@@ -10,12 +10,14 @@ export default function HomePage() {
 
   return (
     <div className={`home-page-container ${expanded ? `side-bar-expanded` : ''}`}>
-      <SideBar
-        expanded={expanded}
-        setExpanded={setExpanded}
-        activeTitle={activeTitle}
-        setActiveTitle={setActiveTitle}
-      />
+      <div style={{ gridArea: 'sidebar' }}>
+        <SideBar
+          expanded={expanded}
+          setExpanded={setExpanded}
+          activeTitle={activeTitle}
+          setActiveTitle={setActiveTitle}
+        />
+      </div>
 
       <div>{activeTitle}</div>
 
