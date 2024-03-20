@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   background: #f5f5f5;
-  padding: 10px;
+  padding: 0.625rem;
   min-height: 100vh;
 }
 
@@ -13,13 +13,13 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  padding: 0px 0px 10px 0;
-  min-height: 50px;
+  padding: 0 0 0.625rem 0;
+  min-height: 3.125rem;
   .title {
-    min-width: 100px;
+    min-width: 6.25rem;
     overflow: hidden;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1rem;
   }
 
   .icon {
@@ -40,7 +40,7 @@
 .side-bar-group-container .slot {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.375rem;
 }
 
 .side-bar-group-container .footer {
@@ -48,11 +48,11 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 3px;
-  border-top: 1px solid #ddd;
+  gap: 0.25rem;
+  border-top: 0.0625rem solid #ddd;
 
-  padding: 10px 0px 0px 0px;
-  min-height: 50px;
+  padding: 0.625rem 0 0 0;
+  min-height: 3.125rem;
 
   .icon {
     display: flex;
@@ -61,11 +61,11 @@
 
   .author .name {
     font-weight: bold;
-    font-size: 10px;
+    font-size: 0.625rem;
   }
 
   .author .email {
     color: #666;
-    font-size: 8px;
+    font-size: 0.5rem;
   }
 }
