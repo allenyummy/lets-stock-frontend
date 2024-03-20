@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { FaBlackTie } from 'react-icons/fa';
 import {
   MdOutlineKeyboardDoubleArrowLeft,
   MdOutlineKeyboardDoubleArrowRight,
@@ -26,20 +25,7 @@ const SideBarGroup = ({ expanded, onClickExpandButton, children }: SideBarGroupP
           )}
         </button>
       </div>
-
       <div className="slot">{children}</div>
-
-      <div className="footer">
-        <div className="icon">
-          <FaBlackTie size={20} />
-        </div>
-        {expanded && (
-          <div className="author">
-            <div className="name">Yulun Chiang</div>
-            <div className="email">ylchiang914@gmail.com</div>
-          </div>
-        )}
-      </div>
     </div>
   );
 };
