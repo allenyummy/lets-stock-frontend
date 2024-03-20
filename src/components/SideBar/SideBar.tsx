@@ -1,45 +1,57 @@
-import { ReactNode } from 'react';
-import { FaBlackTie } from 'react-icons/fa';
-import {
-  MdOutlineKeyboardDoubleArrowLeft,
-  MdOutlineKeyboardDoubleArrowRight,
-} from 'react-icons/md';
+import { CgProfile } from 'react-icons/cg';
+import { IoSettingsOutline } from 'react-icons/io5';
+import { MdOutlineHelpCenter, MdOutlineMailOutline, MdOutlineSpaceDashboard } from 'react-icons/md';
 
-import './SideBar.css';
+import SideBarGroup from './SideBarGroup';
+import SideBarItem from './SideBarItem';
 
 interface SideBarProps {
   expanded: boolean;
-  onClickExpandButton: (value: boolean) => void;
-  children: ReactNode;
+  setExpanded: (value: boolean) => void;
+  activeTitle: string;
+  setActiveTitle: (value: string) => void;
 }
 
-const SideBar = ({ expanded, onClickExpandButton, children }: SideBarProps) => {
+const SideBar = ({ expanded, setExpanded, activeTitle, setActiveTitle }: SideBarProps) => {
   return (
-    <div className="side-bar-container" aria-expanded={expanded}>
-      <div className="header">
-        {expanded && <div className="title">Let's Stock !</div>}
-        <button className="icon" onClick={() => onClickExpandButton(!expanded)}>
-          {expanded ? (
-            <MdOutlineKeyboardDoubleArrowLeft size={20} />
-          ) : (
-            <MdOutlineKeyboardDoubleArrowRight size={20} />
-          )}
-        </button>
-      </div>
-
-      <div className="slot">{children}</div>
-
-      <div className="footer">
-        <div className="icon">
-          <FaBlackTie size={20} />
-        </div>
-        {expanded && (
-          <div className="author">
-            <div className="name">Yulun Chiang</div>
-            <div className="email">ylchiang914@gmail.com</div>
-          </div>
-        )}
-      </div>
+    <div style={{ gridArea: 'sidebar' }}>
+      <SideBarGroup expanded={expanded} onClickExpandButton={setExpanded}>
+        <SideBarItem
+          title="DashBoard"
+          icon={<MdOutlineSpaceDashboard />}
+          expanded={expanded}
+          active={activeTitle === 'DashBoard'}
+          onClick={setActiveTitle}
+        />
+        <SideBarItem
+          title="Profile"
+          icon={<CgProfile />}
+          expanded={expanded}
+          active={activeTitle === 'Profile'}
+          onClick={setActiveTitle}
+        />
+        <SideBarItem
+          title="Settings"
+          icon={<IoSettingsOutline />}
+          expanded={expanded}
+          active={activeTitle === 'Settings'}
+          onClick={setActiveTitle}
+        />
+        <SideBarItem
+          title="Help Center"
+          icon={<MdOutlineHelpCenter />}
+          expanded={expanded}
+          active={activeTitle === 'Help Center'}
+          onClick={setActiveTitle}
+        />
+        <SideBarItem
+          title="Contact Me"
+          icon={<MdOutlineMailOutline />}
+          expanded={expanded}
+          active={activeTitle === 'Contact Me'}
+          onClick={setActiveTitle}
+        />
+      </SideBarGroup>
     </div>
   );
 };
