@@ -13,7 +13,3 @@
 .home-page-container.side-bar-expanded {
   grid-template-columns: 150px 1fr;
 }
-
-.home-page-container .side-bar-grid {
-  grid-area: sidebar;
-}

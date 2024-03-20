@@ -1,4 +1,4 @@
-.side-bar-container {
+.side-bar-group-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -7,7 +7,7 @@
   min-height: 100vh;
 }
 
-.side-bar-container .header {
+.side-bar-group-container .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,16 +37,16 @@
   }
 }
 
-.side-bar-container .slot {
+.side-bar-group-container .slot {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.side-bar-container .footer {
+.side-bar-group-container .footer {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 3px;
   border-top: 1px solid #ddd;
