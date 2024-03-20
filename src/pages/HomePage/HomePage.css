@@ -1,11 +1,11 @@
 .home-page-container {
   display: grid;
   grid-template-rows: 1fr 0.1fr;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: 48px 1fr;
   grid-template-areas:
     'sidebar main'
     'sidebar footer';
-  transition: grid-template-columns 0.15s ease-in-out;
+  transition: grid-template-columns 0.15s;
   width: 100vw;
   height: 100vh;
 }
