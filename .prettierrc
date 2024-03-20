@@ -6,5 +6,8 @@
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "endOfLine": "auto",
-  "plugins": ["prettier-plugin-css-order"]
+  "plugins": [
+    "prettier-plugin-css-order",
+    "@trivago/prettier-plugin-sort-imports"
+  ]
 }

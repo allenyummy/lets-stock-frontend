@@ -1,16 +1,16 @@
-import { Link } from 'react-router-dom';
-import { IoSettingsOutline } from 'react-icons/io5';
+import { useState } from 'react';
 import { CgProfile } from 'react-icons/cg';
+import { IoSettingsOutline } from 'react-icons/io5';
 import {
-  MdOutlineSpaceDashboard,
-  MdOutlineMailOutline,
   MdOutlineHelpCenter,
+  MdOutlineMailOutline,
+  MdOutlineSpaceDashboard,
 } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
-import './HomePage.css';
 import SideBar from '../../components/SideBar/SideBar';
 import SideBarItem from '../../components/SideBar/SideBarItem';
-import { useState } from 'react';
+import './HomePage.css';
 
 const defaultExpanded = true;
 const defaultActiveTitle = 'Profile';
