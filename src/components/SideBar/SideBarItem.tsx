@@ -1,5 +1,6 @@
-import './SideBarItem.css';
 import { ReactNode } from 'react';
+
+import './SideBarItem.css';
 
 interface SideBarItemProps {
   title: string;
