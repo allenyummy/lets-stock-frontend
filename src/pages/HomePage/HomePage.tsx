@@ -63,6 +63,8 @@ export default function Home() {
         </SideBar>
       </div>
 
+      <div>{activeTitle}</div>
+
       <Link to={`/login`}>Logout</Link>
     </div>
   );

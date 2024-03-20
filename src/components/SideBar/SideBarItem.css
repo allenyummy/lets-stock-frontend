@@ -26,4 +26,6 @@
 
 .side-bar-item-container .side-bar-item-title {
   font-size: 12px;
+  min-width: 100px;
+  overflow: hidden;
 }
