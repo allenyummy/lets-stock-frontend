@@ -1,15 +1,21 @@
 import { CgProfile } from 'react-icons/cg';
 import { IoSettingsOutline } from 'react-icons/io5';
-import { MdOutlineHelpCenter, MdOutlineMailOutline, MdOutlineSpaceDashboard } from 'react-icons/md';
+import {
+  MdOutlineHelpCenter,
+  MdOutlineMailOutline,
+  MdOutlineNotificationsNone,
+  MdOutlineSpaceDashboard,
+} from 'react-icons/md';
 
 import SideBarGroup from './SideBarGroup';
 import SideBarItem from './SideBarItem';
+import { SideBarItemCategory } from './types/SideBarItemCategory';
 
 interface SideBarProps {
   expanded: boolean;
   setExpanded: (value: boolean) => void;
-  activeTitle: string;
-  setActiveTitle: (value: string) => void;
+  activeTitle: SideBarItemCategory;
+  setActiveTitle: (value: SideBarItemCategory) => void;
 }
 
 const SideBar = ({ expanded, setExpanded, activeTitle, setActiveTitle }: SideBarProps) => {
@@ -17,38 +23,45 @@ const SideBar = ({ expanded, setExpanded, activeTitle, setActiveTitle }: SideBar
     <>
       <SideBarGroup expanded={expanded} onClickExpandButton={setExpanded}>
         <SideBarItem
-          title="DashBoard"
+          title={SideBarItemCategory.DashBoard}
           icon={<MdOutlineSpaceDashboard />}
           expanded={expanded}
-          active={activeTitle === 'DashBoard'}
+          active={activeTitle === SideBarItemCategory.DashBoard}
           onClick={setActiveTitle}
         />
         <SideBarItem
-          title="Profile"
+          title={SideBarItemCategory.Profile}
           icon={<CgProfile />}
           expanded={expanded}
-          active={activeTitle === 'Profile'}
+          active={activeTitle === SideBarItemCategory.Profile}
           onClick={setActiveTitle}
         />
         <SideBarItem
-          title="Settings"
+          title={SideBarItemCategory.Notification}
+          icon={<MdOutlineNotificationsNone />}
+          expanded={expanded}
+          active={activeTitle === SideBarItemCategory.Notification}
+          onClick={setActiveTitle}
+        />
+        <SideBarItem
+          title={SideBarItemCategory.Settings}
           icon={<IoSettingsOutline />}
           expanded={expanded}
-          active={activeTitle === 'Settings'}
+          active={activeTitle === SideBarItemCategory.Settings}
           onClick={setActiveTitle}
         />
         <SideBarItem
-          title="Help Center"
+          title={SideBarItemCategory.HelpCenter}
           icon={<MdOutlineHelpCenter />}
           expanded={expanded}
-          active={activeTitle === 'Help Center'}
+          active={activeTitle === SideBarItemCategory.HelpCenter}
           onClick={setActiveTitle}
         />
         <SideBarItem
-          title="Contact Me"
+          title={SideBarItemCategory.ContactMe}
           icon={<MdOutlineMailOutline />}
           expanded={expanded}
-          active={activeTitle === 'Contact Me'}
+          active={activeTitle === SideBarItemCategory.ContactMe}
           onClick={setActiveTitle}
         />
       </SideBarGroup>
