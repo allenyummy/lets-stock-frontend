@@ -14,7 +14,7 @@ interface SideBarProps {
 
 const SideBar = ({ expanded, setExpanded, activeTitle, setActiveTitle }: SideBarProps) => {
   return (
-    <div style={{ gridArea: 'sidebar' }}>
+    <>
       <SideBarGroup expanded={expanded} onClickExpandButton={setExpanded}>
         <SideBarItem
           title="DashBoard"
@@ -52,7 +52,7 @@ const SideBar = ({ expanded, setExpanded, activeTitle, setActiveTitle }: SideBar
           onClick={setActiveTitle}
         />
       </SideBarGroup>
-    </div>
+    </>
   );
 };
 
