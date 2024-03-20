@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import Footer from '../../components/Footer/Footer';
 import Main from '../../components/Main/Main';
 import SideBar from '../../components/SideBar/SideBar';
 import { SideBarItemCategory } from '../../components/SideBar/types/SideBarItemCategory';
@@ -25,7 +26,10 @@ export default function HomePage() {
         <Main activeTitle={activeTitle} />
       </div>
 
-      <Link to={`/login`}>Logout</Link>
+      <div style={{ gridArea: 'footer' }}>
+        <Footer />
+        {/* <Link to={`/login`}>Logout</Link> */}
+      </div>
     </div>
   );
 }
