@@ -7,8 +7,8 @@ import {
   MdOutlineSpaceDashboard,
 } from 'react-icons/md';
 
-import SideBarGroup from './SideBarGroup';
-import SideBarItem from './SideBarItem';
+import SideBarGroup from './components/SideBarGroup';
+import SideBarItem from './components/SideBarItem';
 import { SideBarItemCategory } from './types/SideBarItemCategory';
 
 interface SideBarProps {

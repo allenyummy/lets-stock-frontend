@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
+import { SideBarItemCategory } from '../types/SideBarItemCategory';
 import './SideBarItem.css';
-import { SideBarItemCategory } from './types/SideBarItemCategory';
 
 interface SideBarItemProps {
   title: SideBarItemCategory;
