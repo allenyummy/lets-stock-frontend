@@ -22,7 +22,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div style={{ gridArea: 'main' }}>
+      <div style={{ gridArea: 'main', overflow: 'auto' }}>
         <Main activeTitle={activeTitle} />
       </div>
 
