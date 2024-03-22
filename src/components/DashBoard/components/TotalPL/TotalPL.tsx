@@ -10,7 +10,11 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
+import { FaMinus } from 'react-icons/fa';
+import { MdAdd } from 'react-icons/md';
+
+import './TotalPL.css';
 
 ChartJS.register(
   CategoryScale,
@@ -24,57 +28,47 @@ ChartJS.register(
   Title,
 );
 
-export const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+const data = {
+  labels: ['Red', 'Blue', 'Yellow'],
   datasets: [
     {
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-      ],
-      borderWidth: 1,
+      label: '嘿嘿',
+      data: [300, 50, 100],
+      backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
     },
   ],
 };
 
+const options = {
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false,
+    },
+  },
+};
+
 const TotalPL = () => {
   return (
-    <div
-      style={{
-        height: '100%',
-        width: '100%',
-        padding: '10px',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <Pie
-        data={data}
-        options={{
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false,
-            },
-          },
-        }}
-      />
+    <div className="total-pl-container">
+      <div className="figure">
+        <Doughnut data={data} options={options} />
+      </div>
+
+      <div className="description">
+        <div className="percentage">
+          <MdAdd size={50} />
+          10%
+        </div>
+        <div className="number">
+          <div className="label">市值</div>
+          <div className="value">222</div>
+        </div>
+        <div className="number">
+          <div className="label">成本</div>
+          <div className="value">111</div>
+        </div>
+      </div>
     </div>
   );
 };

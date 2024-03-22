@@ -1,0 +1,57 @@
+.total-pl-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  /* background-color: lightgreen; */
+  padding: 0.5rem;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: auto;
+}
+
+.total-pl-container .figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* background-color: lightblue; */
+  width: 40%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.total-pl-container .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: lightcoral;
+  width: 100%;
+
+  .percentage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightyellow;
+    width: 100%;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+  .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: gray;
+    gap: 1rem;
+    font-size: 1rem;
+    background-color: lightpink;
+    white-space: nowrap;
+  }
+}
