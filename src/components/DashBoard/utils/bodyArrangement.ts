@@ -99,12 +99,9 @@ export const bodyArrangementReducer = (state: BodyArrangement[], action: BodyArr
           return {
             ...item,
             attribute: { ...item.attribute, ...attribute },
-          } as BodyArrangement;
+          };
         }
-        return {
-          ...item,
-          style: { ...item.style, display: 'none' },
-        } as BodyArrangement;
+        return item
       });
 
       const isAllNotExpanded = nextState.every((item) => !item.attribute.expanded);
