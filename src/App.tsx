@@ -8,8 +8,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {['/', '/login'].map((path) => (
-          <Route path={path} element={<LoginPage />} />
+        {['/', '/login'].map((path, index) => (
+          <Route key={index} path={path} element={<LoginPage />} />
         ))}
         <Route path="/home" element={<HomePage />} />
       </Routes>
