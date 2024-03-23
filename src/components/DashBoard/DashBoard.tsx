@@ -14,16 +14,7 @@ const DashBoard = () => {
         <div className="update-time">2024-03-24 11:34</div>
       </div>
 
-      <div
-        className="body"
-        style={{
-          ...(bodyGridStyle !== 'default' && {
-            gridTemplateRows: 'minmax(500px, 1fr)',
-            gridTemplateColumns: 'minmax(600px, 1fr)',
-            gridTemplateAreas: `'${bodyGridStyle}'`,
-          }),
-        }}
-      >
+      <div className={`body expanded-${bodyGridStyle}`}>
         {bodyArrangmentState.map(({ keyIndex, Component, style, attribute }, index) => {
           return (
             <div key={index} style={style}>

@@ -94,23 +94,15 @@ export const bodyArrangementReducer = (state: BodyArrangement[], action: BodyArr
   switch (action.type) {
     case BodyArrangementActionType.ATTRIBUTE_CHANGED:
       const { keyIndex, attribute } = action.payload;
-      const nextState = state.map((item) => {
+      const nextState = bodyArrangement.map((item) => {
         if (item.keyIndex === keyIndex) {
           return {
             ...item,
             attribute: { ...item.attribute, ...attribute },
-          } as BodyArrangement;
+          };
         }
-        return {
-          ...item,
-          style: { ...item.style, display: 'none' },
-        } as BodyArrangement;
+        return item
       });
-
-      const isAllNotExpanded = nextState.every((item) => !item.attribute.expanded);
-      if (isAllNotExpanded) {
-        return bodyArrangement;
-      }
       return nextState;
     default:
       throw new Error('Unexpected action');

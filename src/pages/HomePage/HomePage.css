@@ -8,8 +8,8 @@
   transition: grid-template-columns 0.15s;
   width: 100vw;
   height: 100vh;
-}
 
-.home-page-container.side-bar-expanded {
-  grid-template-columns: 10rem 1fr;
+  &.side-bar-expanded-true {
+    grid-template-columns: 10rem 1fr;
+  }
 }

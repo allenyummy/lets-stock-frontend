@@ -12,7 +12,7 @@ export default function HomePage() {
   const [activeTitle, setActiveTitle] = useState(SideBarItemCategory.DashBoard);
 
   return (
-    <div className={`home-page-container ${expanded ? `side-bar-expanded` : ''}`}>
+    <div className={`home-page-container side-bar-expanded-${expanded}`}>
       <div style={{ gridArea: 'sidebar' }}>
         <SideBar
           expanded={expanded}
