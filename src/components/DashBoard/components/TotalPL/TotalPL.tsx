@@ -11,8 +11,6 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { FaMinus } from 'react-icons/fa';
-import { MdAdd } from 'react-icons/md';
 
 import './TotalPL.css';
 
@@ -51,15 +49,11 @@ const options = {
 const TotalPL = () => {
   return (
     <div className="total-pl-container">
-      <div className="figure">
+      <div className="canvas">
         <Doughnut data={data} options={options} />
       </div>
-
       <div className="description">
-        <div className="percentage">
-          <MdAdd size={50} />
-          10%
-        </div>
+        <div className="percentage">+ 10%</div>
         <div className="number">
           <div className="label">市值</div>
           <div className="value">222</div>
