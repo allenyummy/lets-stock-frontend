@@ -1,8 +1,5 @@
 import { ReactNode } from 'react';
-import {
-  MdOutlineKeyboardDoubleArrowLeft,
-  MdOutlineKeyboardDoubleArrowRight,
-} from 'react-icons/md';
+import { GoSidebarCollapse, GoSidebarExpand } from 'react-icons/go';
 
 import './SideBarGroup.css';
 
@@ -18,11 +15,7 @@ const SideBarGroup = ({ expanded, onClickExpandButton, children }: SideBarGroupP
       <div className="header">
         {expanded && <div className="title">Let's Stock !</div>}
         <button className="icon" onClick={() => onClickExpandButton(!expanded)}>
-          {expanded ? (
-            <MdOutlineKeyboardDoubleArrowLeft size={20} />
-          ) : (
-            <MdOutlineKeyboardDoubleArrowRight size={20} />
-          )}
+          {expanded ? <GoSidebarExpand size={20} /> : <GoSidebarCollapse size={20} />}
         </button>
       </div>
       <div className="slot">{children}</div>

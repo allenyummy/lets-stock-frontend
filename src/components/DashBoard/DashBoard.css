@@ -10,7 +10,7 @@
   overflow: auto;
 }
 
-.dash-board-container .header {
+.dash-board-container > .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,7 +28,7 @@
   }
 }
 
-.dash-board-container .body {
+.dash-board-container > .body {
   display: grid;
   grid-template-rows: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
   grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(300px, 1.5fr);

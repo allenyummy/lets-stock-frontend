@@ -11,6 +11,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { IoExpandOutline } from 'react-icons/io5';
 
 import './TotalPL.css';
 
@@ -49,18 +50,27 @@ const options = {
 const TotalPL = () => {
   return (
     <div className="total-pl-container">
-      <div className="canvas">
-        <Doughnut data={data} options={options} />
-      </div>
-      <div className="description">
-        <div className="percentage">+ 10%</div>
-        <div className="number">
-          <div className="label">市值</div>
-          <div className="value">222</div>
+      <div className="header">
+        <div className="title">Total Profit & Loss</div>
+        <div className="icon">
+          <IoExpandOutline />
         </div>
-        <div className="number">
-          <div className="label">成本</div>
-          <div className="value">111</div>
+      </div>
+
+      <div className="body">
+        <div className="canvas">
+          <Doughnut data={data} options={options} />
+        </div>
+        <div className="description">
+          <div className="percentage">+ 10%</div>
+          <div className="number">
+            <div className="label">市值</div>
+            <div className="value">222</div>
+          </div>
+          <div className="number">
+            <div className="label">成本</div>
+            <div className="value">111</div>
+          </div>
         </div>
       </div>
     </div>
