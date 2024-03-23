@@ -1,7 +1,7 @@
 import { useReducer, useState } from 'react';
 
 import './DashBoard.css';
-import { BodyArrangementActionType, bodyArrangement, bodyArrangementReducer, dynamicBodyGridStyle } from './utils';
+import { BodyArrangementActionType, bodyArrangement, bodyArrangementReducer } from './utils';
 
 const DashBoard = () => {
   const [bodyGridStyle, setBodyGridStyle] = useState('default');
@@ -14,7 +14,16 @@ const DashBoard = () => {
         <div className="update-time">2024-03-24 11:34</div>
       </div>
 
-      <div className="body" style={dynamicBodyGridStyle(bodyGridStyle)}>
+      <div
+        className="body"
+        style={{
+          ...(bodyGridStyle !== 'default' && {
+            gridTemplateRows: 'minmax(500px, 1fr)',
+            gridTemplateColumns: 'minmax(600px, 1fr)',
+            gridTemplateAreas: `'${bodyGridStyle}'`,
+          }),
+        }}
+      >
         {bodyArrangmentState.map(({ keyIndex, Component, style, attribute }, index) => {
           return (
             <div key={index} style={style}>
@@ -25,11 +34,7 @@ const DashBoard = () => {
                     type: BodyArrangementActionType.ATTRIBUTE_CHANGED,
                     payload: { keyIndex, attribute: { expanded } },
                   });
-                  if (!expanded) {
-                    setBodyGridStyle('default');
-                  } else {
-                    setBodyGridStyle(keyIndex);
-                  }
+                  setBodyGridStyle(expanded ? keyIndex : 'default');
                 }}
               />
             </div>

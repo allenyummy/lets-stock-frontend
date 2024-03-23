@@ -32,6 +32,12 @@
   display: grid;
   grid-template-rows: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
   grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(300px, 1.5fr);
+  grid-template-areas:
+    'totalPL calendarPL calendarDividend recentTransaction'
+    'timeSeries timeSeries timeSeries recentTransaction'
+    'timeSeries timeSeries timeSeries recentTransaction'
+    'pivotTable pivotTable pivotTable recentTransaction'
+    'pivotTable pivotTable pivotTable recentTransaction';
   gap: 0.625rem;
   width: 100%;
   min-width: 100%;

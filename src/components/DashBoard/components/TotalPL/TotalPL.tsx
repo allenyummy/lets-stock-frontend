@@ -56,7 +56,7 @@ const TotalPL = ({ expanded, onClickExpandButton }: Props) => {
   return (
     <div className="total-pl-container">
       <div className="header">
-        <div className="title">Total P/L {`${expanded}`}</div>
+        <div className="title">Total P/L</div>
         <div className="icon">
           <IoExpandOutline size={'1rem'} onClick={() => onClickExpandButton(!expanded)} />
         </div>
