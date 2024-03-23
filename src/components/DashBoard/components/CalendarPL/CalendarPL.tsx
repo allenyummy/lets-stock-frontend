@@ -13,7 +13,7 @@ import {
 import { Doughnut } from 'react-chartjs-2';
 import { IoExpandOutline } from 'react-icons/io5';
 
-import './TotalPL.css';
+import './CalendarPL.css';
 
 ChartJS.register(
   CategoryScale,
@@ -47,11 +47,13 @@ const options = {
   },
 };
 
-const TotalPL = () => {
+const CalendarPL = () => {
   return (
-    <div className="total-pl-container">
+    <div className="calendar-pl-container">
       <div className="header">
-        <div className="title">Total P/L</div>
+        <div className="title">Calendar P/L
+          <div className="label">today</div>
+        </div>
         <div className="icon">
           <IoExpandOutline />
         </div>
@@ -62,19 +64,12 @@ const TotalPL = () => {
           <Doughnut data={data} options={options} />
         </div>
         <div className="description">
-          <div className="percentage">+ 10%</div>
-          <div className="number">
-            <div className="label">市值</div>
-            <div className="value">222</div>
-          </div>
-          <div className="number">
-            <div className="label">成本</div>
-            <div className="value">111</div>
-          </div>
+          <div className="number">+ 10%</div>
+          <div className="number">+ 400</div>
         </div>
       </div>
     </div>
   );
 };
 
-export default TotalPL;
+export default CalendarPL;

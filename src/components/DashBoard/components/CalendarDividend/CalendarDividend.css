@@ -1,4 +1,4 @@
-.total-pl-container {
+.calendar-dividend-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +12,7 @@
   overflow: auto;
 }
 
-.total-pl-container > .header {
+.calendar-dividend-container > .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,9 +26,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap: 0.3rem;
+    width: 100%;
+    overflow: auto;
     overflow: auto;
     font-size: 1rem;
     white-space: nowrap;
+
+    .label {
+      fone-size: 0.5rem;
+      color: gray;
+    }
   }
 
   .icon {
@@ -38,7 +46,7 @@
   }
 }
 
-.total-pl-container > .body {
+.calendar-dividend-container > .body {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -51,7 +59,7 @@
   overflow: auto;
 }
 
-.total-pl-container > .body > .canvas {
+.calendar-dividend-container > .body > .canvas {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,14 +68,14 @@
   overflow: hidden;
 }
 
-.total-pl-container > .body > .description {
+.calendar-dividend-container > .body > .description {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
 
-  .percentage {
+  .number {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -77,29 +85,13 @@
     white-space: nowrap;
   }
 
-  .number {
+  .period {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     width: 100%;
-
-    .label {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      width: 100%;
-      color: gray;
-      font-size: 1rem;
-    }
-
-    .value {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      width: 100%;
-      color: gray;
-      font-size: 1rem;
-      text-decoration: underline;
-    }
+    color: gray;
+    font-size: 1rem;
+    white-space: nowrap;
   }
 }
