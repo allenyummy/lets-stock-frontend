@@ -1,0 +1,65 @@
+.recent-transaction-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: auto;
+}
+
+.recent-transaction-container > .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: fit-content;
+
+  .title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.3rem;
+
+    &:hover {
+      border-radius: 1rem;
+      background-color: lightgray;
+    }
+  }
+}
+
+.recent-transaction-container > .body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.recent-transaction-container > .body > .canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  overflow: hidden;
+}
