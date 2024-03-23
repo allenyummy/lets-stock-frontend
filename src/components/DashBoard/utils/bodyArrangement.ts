@@ -3,7 +3,7 @@ import { CSSProperties } from 'react';
 import PivotTable from '../components/PivotTable/PivotTable';
 import RecentTransaction from '../components/RecentTransaction/RecentTransaction';
 import TimeSeries from '../components/TimeSeries/TimeSeries';
-import TodayPL from '../components/TodayPL/TodayPL';
+import CalendarPL from '../components/CalendarPL/CalendarPL';
 import TotalDividend from '../components/TotalDividend/TotalDividend';
 import TotalPL from '../components/TotalPL/TotalPL';
 
@@ -21,7 +21,7 @@ export const bodyArrangement: BodyArrangement[] = [
     },
   },
   {
-    Component: TodayPL,
+    Component: CalendarPL,
     style: {
       gridArea: 'grid2',
     },
