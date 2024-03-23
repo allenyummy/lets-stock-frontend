@@ -71,7 +71,6 @@ export const bodyArrangement: BodyArrangement[] = [
       height: '100%',
       minHeight: '100%',
       overflow: 'auto',
-      visibility: 'visible',
     },
     attribute: {
       expanded: false,
@@ -99,13 +98,12 @@ export const bodyArrangementReducer = (state: BodyArrangement[], action: BodyArr
         if (item.keyIndex === keyIndex) {
           return {
             ...item,
-            style: { ...item.style, visibility: 'visible' },
             attribute: { ...item.attribute, ...attribute },
           } as BodyArrangement;
         }
         return {
           ...item,
-          style: { ...item.style, visibility: 'hidden' },
+          style: { ...item.style, display: 'none' },
         } as BodyArrangement;
       });
 
