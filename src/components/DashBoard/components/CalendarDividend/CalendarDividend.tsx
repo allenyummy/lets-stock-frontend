@@ -52,9 +52,7 @@ const CalendarDividend = () => {
   return (
     <div className="calendar-dividend-container">
       <div className="header">
-        <div className="title">Calendar Dividend
-          <div className="label">this month</div>
-        </div>
+        <div className="title">Calendar Dividend</div>
         <div className="icon">
           <IoExpandOutline />
         </div>
@@ -65,8 +63,8 @@ const CalendarDividend = () => {
           <Doughnut data={data} options={options} />
         </div>
         <div className="description">
-          <div className="number">+ 10%</div>
           <div className="number">+ 400</div>
+          <div className="period">this month</div>
         </div>
       </div>
     </div>
