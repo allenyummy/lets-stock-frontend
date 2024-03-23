@@ -9,45 +9,53 @@ import TotalPL from '../components/TotalPL/TotalPL';
 
 interface BodyArrangement {
   [index: string]: unknown;
-  Component: () => JSX.Element;
+  keyIndex: string;
+  Component: (args: any) => JSX.Element;
   style: CSSProperties;
+  attribute: Record<string, unknown>;
 }
 
 export const bodyArrangement: BodyArrangement[] = [
   {
+    keyIndex: 'totalPL',
     Component: TotalPL,
     style: {
-      gridArea: 'grid1',
+      gridArea: 'totalPL',
     },
   },
   {
+    keyIndex: 'calendarPL',
     Component: CalendarPL,
     style: {
-      gridArea: 'grid2',
+      gridArea: 'calendarPL',
     },
   },
   {
+    keyIndex: 'calendarDividend',
     Component: CalendarDividend,
     style: {
-      gridArea: 'grid3',
+      gridArea: 'calendarDividend',
     },
   },
   {
+    keyIndex: 'recentTransaction',
     Component: RecentTransaction,
     style: {
-      gridArea: 'grid4',
+      gridArea: 'recentTransaction',
     },
   },
   {
+    keyIndex: 'timeSeries',
     Component: TimeSeries,
     style: {
-      gridArea: 'grid5',
+      gridArea: 'timeSeries',
     },
   },
   {
+    keyIndex: 'pivotTable',
     Component: PivotTable,
     style: {
-      gridArea: 'grid6',
+      gridArea: 'pivotTable',
     },
   },
 ].map((item) => {
@@ -64,5 +72,47 @@ export const bodyArrangement: BodyArrangement[] = [
       minHeight: '100%',
       overflow: 'auto',
     },
+    attribute: {
+      expanded: false,
+    },
   };
 });
+
+export enum BodyArrangementActionType {
+  ATTRIBUTE_CHANGED = 'attribute-changed',
+}
+
+interface BodyArrangementAttributeChangedAction {
+  type: BodyArrangementActionType.ATTRIBUTE_CHANGED;
+  payload: {
+    keyIndex: string;
+    attribute: Record<string, unknown>;
+  };
+}
+
+export const bodyArrangementReducer = (state: BodyArrangement[], action: BodyArrangementAttributeChangedAction) => {
+  switch (action.type) {
+    case BodyArrangementActionType.ATTRIBUTE_CHANGED:
+      const { keyIndex, attribute } = action.payload;
+      const nextState = state.map((item) => {
+        if (item.keyIndex === keyIndex) {
+          return {
+            ...item,
+            attribute: { ...item.attribute, ...attribute },
+          } as BodyArrangement;
+        }
+        return {
+          ...item,
+          style: { ...item.style, display: 'none' },
+        } as BodyArrangement;
+      });
+
+      const isAllNotExpanded = nextState.every((item) => !item.attribute.expanded);
+      if (isAllNotExpanded) {
+        return bodyArrangement;
+      }
+      return nextState;
+    default:
+      throw new Error('Unexpected action');
+  }
+};

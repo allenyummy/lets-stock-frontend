@@ -47,15 +47,21 @@ const options = {
   },
 };
 
-const CalendarPL = () => {
+interface Props {
+  expanded: boolean;
+  onClickExpandButton: (value: boolean) => void;
+}
+
+const CalendarPL = ({ expanded, onClickExpandButton }: Props) => {
   return (
     <div className="calendar-pl-container">
       <div className="header">
-        <div className="title">Calendar P/L
+        <div className="title">
+          Calendar P/L
           <div className="label">today</div>
         </div>
         <div className="icon">
-          <IoExpandOutline />
+          <IoExpandOutline size={'1rem'} onClick={() => onClickExpandButton(!expanded)} />
         </div>
       </div>
 

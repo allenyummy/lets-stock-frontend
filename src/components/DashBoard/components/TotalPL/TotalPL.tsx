@@ -47,13 +47,18 @@ const options = {
   },
 };
 
-const TotalPL = () => {
+interface Props {
+  expanded: boolean;
+  onClickExpandButton: (value: boolean) => void;
+}
+
+const TotalPL = ({ expanded, onClickExpandButton }: Props) => {
   return (
     <div className="total-pl-container">
       <div className="header">
         <div className="title">Total P/L</div>
         <div className="icon">
-          <IoExpandOutline />
+          <IoExpandOutline size={'1rem'} onClick={() => onClickExpandButton(!expanded)} />
         </div>
       </div>
 
@@ -65,7 +70,7 @@ const TotalPL = () => {
           <div className="percentage">+ 10%</div>
           <div className="number">
             <div className="label">市值</div>
-            <div className="value">222</div>
+            <div className="value">{expanded ? 222 : 10}</div>
           </div>
           <div className="number">
             <div className="label">成本</div>

@@ -47,14 +47,19 @@ const options = {
   },
 };
 
+interface Props {
+  expanded: boolean;
+  onClickExpandButton: (value: boolean) => void;
+}
+
 // [TODO] support time period: month, year
-const CalendarDividend = () => {
+const CalendarDividend = ({ expanded, onClickExpandButton }: Props) => {
   return (
     <div className="calendar-dividend-container">
       <div className="header">
         <div className="title">Calendar Dividend</div>
         <div className="icon">
-          <IoExpandOutline />
+        <IoExpandOutline size={'1rem'} onClick={() => onClickExpandButton(!expanded)} />
         </div>
       </div>
 
