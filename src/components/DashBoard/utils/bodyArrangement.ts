@@ -1,10 +1,10 @@
 import { CSSProperties } from 'react';
 
+import CalendarDividend from '../components/CalendarDividend/CalendarDividend';
+import CalendarPL from '../components/CalendarPL/CalendarPL';
 import PivotTable from '../components/PivotTable/PivotTable';
 import RecentTransaction from '../components/RecentTransaction/RecentTransaction';
 import TimeSeries from '../components/TimeSeries/TimeSeries';
-import CalendarPL from '../components/CalendarPL/CalendarPL';
-import TotalDividend from '../components/TotalDividend/TotalDividend';
 import TotalPL from '../components/TotalPL/TotalPL';
 
 interface BodyArrangement {
@@ -27,7 +27,7 @@ export const bodyArrangement: BodyArrangement[] = [
     },
   },
   {
-    Component: TotalDividend,
+    Component: CalendarDividend,
     style: {
       gridArea: 'grid3',
     },
