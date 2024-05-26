@@ -41,6 +41,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 - https://cloud.google.com/kubernetes-engine/docs/quickstarts/deploy-app-container-image
 - https://cloud.google.com/kubernetes-engine/docs/deploy-app-cluster
+- https://cloud.google.com/kubernetes-engine/docs/tutorials/configuring-domain-name-static-ip
 
 
 ## Step 1: build docker image
