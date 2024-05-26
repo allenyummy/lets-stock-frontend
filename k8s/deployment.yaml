@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lets-stock-frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lets-stock-frontend
+  template:
+    metadata:
+      labels:
+        app: lets-stock-frontend
+    spec:
+      containers:
+      - name: lets-stock-frontend-container
+        image: asia-southeast1-docker.pkg.dev/lets-stock/lets-stock-frontend/lets-stock-frontend-img:latest
+        ports:
+        - containerPort: 80
+        env:
+          - name: PORT
+            value: "80"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+            ephemeral-storage: "1Gi"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+            ephemeral-storage: "1Gi"
