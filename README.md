@@ -1,20 +1,17 @@
-# Getting Started with Create React App
+# Lets Stock Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a frontend application.
 
-## Available Scripts
+## Development
 
-In the project directory, you can run:
-
-### `npm start`
-
+### `npm run start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -39,8 +36,40 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- https://cloud.google.com/kubernetes-engine/docs/quickstarts/deploy-app-container-image
+- https://cloud.google.com/kubernetes-engine/docs/deploy-app-cluster
+
+
+## Step 1: build docker image
+```
+$ docker build -t asia-southeast1-docker.pkg.dev/lets-stock/lets-stock-frontend/lets-stock-frontend-img .
+```
+
+## Step 2: grant permission to GCP Artifact Respository if havn't done before
+```
+$ gcloud auth configure-docker asia-southeast1-docker.pkg.dev
+```
+
+## Step 3: push docker image to GCP Artifact Repository
+```
+$ docker push asia-southeast1-docker.pkg.dev/lets-stock/lets-stock-frontend/lets-stock-frontend-img:latest
+```
+
+## [Optional] Step 4: use gcloud to do `docker build` and `docker push` in one command
+Build your container image using Cloud Build, which is similar to running `docker build` and `docker push`, but the build happens on Google Cloud:
+```
+$ gcloud builds submit --tag asia-southeast1-docker.pkg.dev/lets-stock/lets-stock-frontend/lets-stock-frontend-img .
+```
+
+## Step 5: deploy to GKE cluster
+```
+$ kubectl apply -f deployment.yaml
+$ kubectl get deployments
+$ kubectl get pods
+
+$ kubectl apply -f service.yaml
+$ kubectl get services
+```
