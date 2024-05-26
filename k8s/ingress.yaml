@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lets-stock-frontend-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "gce"  # Use "nginx" if you are using NGINX ingress controller
+    kubernetes.io/ingress.global-static-ip-name: "lets-stock-frontend-static-ip"
+    networking.gke.io/managed-certificates: managed-cert
+spec:
+  rules:
+    - host: lets-stock.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: lets-stock-frontend-service
+                port:
+                  number: 80
