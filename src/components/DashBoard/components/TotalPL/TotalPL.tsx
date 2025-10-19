@@ -62,20 +62,34 @@ const TotalPL = ({ expanded, onClickExpandButton }: Props) => {
         </div>
       </div>
 
-      <div className="body">
-        <div className="canvas">
-          <Doughnut data={data} options={options} />
-        </div>
+      <div className='body'>
+        {expanded && (
+          <div className="canvas">
+            <Doughnut data={data} options={options} />
+          </div>
+        )}
+
         <div className="description">
-          <div className="percentage">+ 10%</div>
           <div className="number">
-            <div className="label">市值</div>
-            <div className="value">{expanded ? 222 : 10}</div>
+            <div className="label">含息報酬率</div>
+            <div className="value">+20%</div>
           </div>
           <div className="number">
-            <div className="label">成本</div>
+            <div className="label">總市值部位</div>
             <div className="value">111</div>
           </div>
+          {expanded && (
+            <div className="number">
+              <div className="label">總買入成本</div>
+              <div className="value">111</div>
+            </div>
+          )}
+          {expanded && (
+            <div className="number">
+              <div className="label">總領股息</div>
+              <div className="value">111</div>
+            </div>
+          )}
         </div>
       </div>
     </div>
