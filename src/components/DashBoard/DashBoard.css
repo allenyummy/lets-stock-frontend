@@ -52,22 +52,22 @@
   }
 
   &.expanded-totalPL {
-    grid-template-rows: minmax(42rem, 5fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr);
-    grid-template-columns: minmax(42rem, 8fr) minmax(2rem, 1fr) minmax(2rem, 1fr) minmax(2rem, 1fr);
+    grid-template-rows: minmax(30rem, 5fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr);
+    grid-template-columns: minmax(30rem, 8fr) minmax(2rem, 1fr) minmax(2rem, 1fr) minmax(2rem, 1fr);
   }
 
   &.expanded-calendarPL {
-    grid-template-rows: minmax(42rem, 5fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr);
-    grid-template-columns: minmax(2rem, 1fr) minmax(42rem, 8fr) minmax(2rem, 1fr) minmax(2rem, 1fr);
+    grid-template-rows: minmax(30rem, 5fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr);
+    grid-template-columns: minmax(2rem, 1fr) minmax(30rem, 8fr) minmax(2rem, 1fr) minmax(2rem, 1fr);
   }
 
   &.expanded-calendarDividend {
-    grid-template-rows: minmax(42rem, 5fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr);
-    grid-template-columns: minmax(2rem, 1fr) minmax(2rem, 1fr) minmax(42rem, 8fr) minmax(2rem, 1fr);
+    grid-template-rows: minmax(30rem, 5fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr) minmax(0.5rem, 1fr);
+    grid-template-columns: minmax(2rem, 1fr) minmax(2rem, 1fr) minmax(30rem, 8fr) minmax(2rem, 1fr);
   }
 
   &.expanded-timeSeries {
-    grid-template-rows: minmax(3rem, 1fr) minmax(41rem, 5fr) minmax(1rem, 1fr) minmax(1rem, 1fr) minmax(1rem, 1fr);
+    grid-template-rows: minmax(3rem, 1fr) minmax(30rem, 5fr) minmax(1rem, 1fr) minmax(1rem, 1fr) minmax(1rem, 1fr);
     grid-template-columns: minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr);
     grid-template-areas:
       'totalPL calendarPL calendarDividend recentTransaction'
@@ -78,7 +78,7 @@
   }
 
   &.expanded-pivotTable {
-    grid-template-rows: minmax(3rem, 1fr) minmax(1rem, 1fr) minmax(1rem, 1fr) minmax(38rem, 1fr) minmax(5rem, 1fr);
+    grid-template-rows: minmax(3rem, 1fr) minmax(1rem, 1fr) minmax(1rem, 1fr) minmax(30rem, 1fr) minmax(5rem, 1fr);
     grid-template-columns: minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr);
     grid-template-areas:
       'totalPL calendarPL calendarDividend recentTransaction'
@@ -90,7 +90,7 @@
 
   &.expanded-recentTransaction {
     grid-template-rows: minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr);
-    grid-template-columns: minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(38rem, 1fr) minmax(5rem, 1fr);
+    grid-template-columns: minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(30rem, 1fr) minmax(5rem, 1fr);
     grid-template-areas:
     'totalPL recentTransaction recentTransaction recentTransaction'
     'calendarPL recentTransaction recentTransaction recentTransaction'
